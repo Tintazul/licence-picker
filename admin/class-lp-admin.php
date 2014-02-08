@@ -13,7 +13,7 @@ if ( !defined('DB_NAME') ) {
 /**
  * Class that holds most of the admin functionality.
  */
-class LP_Admin {
+class LP_Admin extends LP_Base {
 
 	public function __construct() {
 		add_action( 'admin_init', array( $this, 'requires_wordpress_version') );
@@ -46,15 +46,13 @@ class LP_Admin {
 		$plugin = LP_BASENAME;
 		$plugin_data = get_plugin_data( LP_MAINFILE, false );
 
-printf( "<h1>\$wp_version = '%s' - LP_MIN_WP_VERSION = '%s'</h1>", $wp_version, LP_MIN_WP_VERSION );
-
 		if ( version_compare($wp_version, LP_MIN_WP_VERSION, "<" ) ) {
 			if( is_plugin_active( $plugin ) ) {
 				// deactivate plugin, print error message
 				deactivate_plugins( $plugin );
-				// TRANSLATORS: first placeholder for plugin name, second for version number
+				// Translators: 1 is plugin name, 2 is version number
 				$msg_title = sprintf( __( '%1$s %2$s not activated', 'licence-picker' ), $plugin_data['Name'], $plugin_data['Version'] );
-				// TRANSLATORS: first placeholder for current WordPress version, second for required version
+				// Translators: 1 is current WordPress version, 2 is required version
 				$msg_para = sprintf( __( 'You are running WordPress version %1$s. This plugin requires version %2$s or higher, and has been deactivated! Please upgrade WordPress and try again.', 'licence-picker' ), $wp_version, LP_MIN_WP_VERSION );
 				$msg_back = __( 'Back to WordPress admin', 'licence-picker' );
 				wp_die(  sprintf( '<h1>%s</h1><p>%s</p><p><a href="%s">%s</a></p>' , $msg_title, $msg_para, admin_url(), $msg_back ) );
