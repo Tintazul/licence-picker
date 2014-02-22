@@ -20,7 +20,6 @@ class LP_Frontend extends LP_Base {
 	 */
 	static function the_licences( $sep, $glue ) {
 		// display the licences, if any
-		// TODO: print link, too
 		$licences = get_the_terms( get_the_id(), 'licence' );
 		if( $licences ) {
 			// collate all the terms
@@ -32,7 +31,7 @@ class LP_Frontend extends LP_Base {
 				$number++;
 			}
 			// get label and print
-			// Translators: The term 'licencing' in English does not require plural; do as works bestter for your language
+			// Translators: The term 'licencing' in English does not require plural; do as works best for your language
 			$label = _n( 'Licencing', 'Licencing', $number, 'licence-picker' );
 			echo( "<li><label class=\"meta-label\">$label$sep</label>$imploded_licences</li>\n" );
 		}

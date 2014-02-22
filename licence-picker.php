@@ -10,7 +10,7 @@
  * Plugin Name:       Licence Picker
  * Plugin URI:        @TODO
  * Description:       Defines a licence taxonomy, so editors can set licences on a post-by-post basis. Prints the licencing meta tag. Use it for Creative Commons, GNU etc.
- * Version:           0.0.0
+ * Version:           0.0.1
  * Author:            Júlio Reis / A Rocha International
  * Author URI:        http://www.tintazul.com.pt/julio.reis/
  * Text Domain:       licence-picker
@@ -31,7 +31,7 @@ define( 'LP_MAINFILE', __FILE__ );                    // absolute path to this f
 define( 'LP_BASENAME', plugin_basename( __FILE__ ) ); // relative path to this file
 define( 'LP_PATH', plugin_dir_path( __FILE__ ) );     // absolute path to plugin dir
 define( 'LP_URL', plugin_dir_url( __FILE__ ) );       // URL to plugin dir
-define( 'LP_VERSION', '0.0.0' );                      // plugin version
+define( 'LP_VERSION', '0.0.1' );                      // plugin version
 define( 'LP_MIN_WP_VERSION', '3.0.0');                // required minimum WP version
 
 load_plugin_textdomain( 'licence-picker', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
@@ -41,7 +41,7 @@ load_plugin_textdomain( 'licence-picker', false, dirname( plugin_basename( __FIL
  * @return void
  */
 function lp_admin_init() {
-	require LP_PATH . 'public/class-lp-base.php';
+	require LP_PATH . 'admin/class-lp-base.php';
 	require LP_PATH . 'admin/class-lp-admin.php';
 }
 
@@ -50,12 +50,14 @@ function lp_admin_init() {
  * @return void
  */
 function lp_frontend_init() {
-	require LP_PATH . 'public/class-lp-base.php';
+	require LP_PATH . 'admin/class-lp-base.php';
 	require LP_PATH . 'public/class-lp-frontend.php';
 }
 
 if ( is_admin() ) {
-	add_action( 'plugins_loaded', 'lp_admin_init', 0 );
+	if ( defined('DOING_AJAX') && DOING_AJAX ) {  // if we had ajax, we’d load it here
+	}
+	else add_action( 'plugins_loaded', 'lp_admin_init', 0 );
 } else {	
 	add_action( 'plugins_loaded', 'lp_frontend_init', 0 );
 }
