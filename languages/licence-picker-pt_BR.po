@@ -1,39 +1,39 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Licence Picker\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-22 15:46+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-02-22 15:25+0000\n"
+"Last-Translator: Júlio Reis <webmaster@arocha.org>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/wp-translations/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Translators: 1 is plugin name, 2 is version number
 #: admin/class-lp-admin.php:54
 #, php-format
 msgid "%1$s %2$s not activated"
-msgstr ""
+msgstr "%1$s %2$s não ativado"
 
 #. Translators: 1 is current WordPress version, 2 is required version
 #: admin/class-lp-admin.php:56
 #, php-format
 msgid ""
-"You are running WordPress version %1$s. This plugin requires version %2$s or "
-"higher, and has been deactivated! Please upgrade WordPress and try again."
-msgstr ""
+"You are running WordPress version %1$s. This plugin requires version %2$s or"
+" higher, and has been deactivated! Please upgrade WordPress and try again."
+msgstr "Está a correr o WordPress %1$s. Este plugin exige no mínimo a versão %2$s, e foi desativado! Por favor atualize o WordPress e tente novamente."
 
 #: admin/class-lp-admin.php:57
 msgid "Back to WordPress admin"
-msgstr ""
+msgstr "Regressar à página de administração do WordPress"
 
 #: licence-picker.php:77 licence-picker.php:78
 msgid "Licence picker"
@@ -75,7 +75,8 @@ msgstr ""
 msgid "Licences"
 msgstr ""
 
-#. Translators: The term 'licencing' in English does not require plural; do as works best for your language
+#. Translators: The term 'licencing' in English does not require plural; do as
+#. works best for your language
 #: public/class-lp-frontend.php:35
 msgid "Licencing"
 msgid_plural "Licencing"

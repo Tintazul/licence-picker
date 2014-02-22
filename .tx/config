@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+minimum_perc = 10
+
+[licence-picker.licence-pickerpot]
+file_filter = languages/licence-picker-<lang>.po
+source_file = languages/licence-picker.pot
+source_lang = en_US
+type = PO
